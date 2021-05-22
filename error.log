@@ -1,0 +1,7 @@
+{"message":"error 02 ","level":"error"}
+{"message":"error 02 ","level":"error"}
+{"message":"error 02 ","level":"error"}
+{"message":"error 02 ","level":"error"}
+{"level":"error","message":"Error en conexión de Base de datos: Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.iazms.mongodb.net"}
+{"level":"error","message":"Error en conexión de Base de datos: Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.iazms.mongodb.net"}
+{"level":"error","message":"Error en conexión de Base de datos: Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.iazms.mongodb.net"}

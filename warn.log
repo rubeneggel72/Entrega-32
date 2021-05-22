@@ -1,0 +1,15 @@
+{"message":"warning 01 ","level":"warn"}
+{"message":"error 02 ","level":"error"}
+{"level":"warn","message":"peligro"}
+{"message":"warning 01 ","level":"warn"}
+{"message":"error 02 ","level":"error"}
+{"level":"warn","message":"peligro"}
+{"message":"warning 01 ","level":"warn"}
+{"message":"error 02 ","level":"error"}
+{"level":"warn","message":"peligro"}
+{"message":"warning 01 ","level":"warn"}
+{"message":"error 02 ","level":"error"}
+{"level":"warn","message":"peligro"}
+{"level":"error","message":"Error en conexión de Base de datos: Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.iazms.mongodb.net"}
+{"level":"error","message":"Error en conexión de Base de datos: Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.iazms.mongodb.net"}
+{"level":"error","message":"Error en conexión de Base de datos: Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.iazms.mongodb.net"}

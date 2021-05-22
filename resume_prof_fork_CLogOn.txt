@@ -1,0 +1,863 @@
+Statistical profiling result from prof_fork_CLogOn.log, (2740 ticks, 5 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   1794   65.5%          /usr/lib/x86_64-linux-gnu/libnode.so.72
+     32    1.2%          /usr/lib/x86_64-linux-gnu/libc-2.33.so
+      7    0.3%          /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+      3    0.1%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.29
+      2    0.1%          /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+      1    0.0%          /usr/lib/x86_64-linux-gnu/libicuuc.so.67.1
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      9    0.3%    1.0%  LazyCompile: *normalizeString path.js:52:25
+      7    0.3%    0.8%  LazyCompile: *resolve path.js:973:10
+      4    0.1%    0.4%  LazyCompile: *emit events.js:262:44
+      2    0.1%    0.2%  LazyCompile: *parserOnHeadersComplete _http_common.js:77:33
+      2    0.1%    0.2%  LazyCompile: *_addListener events.js:342:22
+      2    0.1%    0.2%  LazyCompile: *<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      1    0.0%    0.1%  RegExp: DEFAULT
+      1    0.0%    0.1%  LazyCompile: *realpathSync fs.js:1568:22
+      1    0.0%    0.1%  LazyCompile: *nextTick internal/process/task_queues.js:105:18
+      1    0.0%    0.1%  LazyCompile: *hidden internal/errors.js:282:25
+      1    0.0%    0.1%  LazyCompile: *Readable.on _stream_readable.js:872:33
+
+ [C++]:
+   ticks  total  nonlib   name
+    224    8.2%   24.9%  node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    138    5.0%   15.3%  epoll_pwait@@GLIBC_2.6
+     51    1.9%    5.7%  node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     44    1.6%    4.9%  __write@@GLIBC_2.2.5
+     38    1.4%    4.2%  void node::StreamBase::JSMethod<&node::StreamBase::Writev>(v8::FunctionCallbackInfo<v8::Value> const&)
+     38    1.4%    4.2%  void node::StreamBase::JSMethod<&(int node::StreamBase::WriteString<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&))>(v8::FunctionCallbackInfo<v8::Value> const&)
+     22    0.8%    2.4%  node::crypto::PBKDF2(v8::FunctionCallbackInfo<v8::Value> const&)
+     20    0.7%    2.2%  node::crypto::Hash::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     19    0.7%    2.1%  fwrite@@GLIBC_2.2.5
+     19    0.7%    2.1%  __lll_lock_wait
+     13    0.5%    1.4%  node::crypto::SSLWrap<node::TLSWrap>::GetPeerCertificate(v8::FunctionCallbackInfo<v8::Value> const&)
+     11    0.4%    1.2%  syscall@@GLIBC_2.2.5
+      9    0.3%    1.0%  node::crypto::RandomBytes(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    0.3%    0.9%  __GI___pthread_mutex_unlock
+      7    0.3%    0.8%  void node::StreamBase::JSMethod<&node::StreamBase::WriteBuffer>(v8::FunctionCallbackInfo<v8::Value> const&)
+      7    0.3%    0.8%  __libc_malloc@@GLIBC_2.2.5
+      7    0.3%    0.8%  __futex_abstimed_wait_cancelable64
+      6    0.2%    0.7%  __libc_write
+      5    0.2%    0.6%  node::crypto::SecureContext::AddRootCerts(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.2%    0.6%  node::crypto::Hash::HashDigest(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.2%    0.6%  epoll_ctl@@GLIBC_2.3.2
+      5    0.2%    0.6%  __libc_read
+      4    0.1%    0.4%  v8::internal::VariableMap::Declare(v8::internal::Zone*, v8::internal::Scope*, v8::internal::AstRawString const*, v8::internal::VariableMode, v8::internal::VariableKind, v8::internal::InitializationFlag, v8::internal::MaybeAssignedFlag, bool*)
+      4    0.1%    0.4%  v8::internal::MarkingBarrier(v8::internal::HeapObject, v8::internal::FullObjectSlot, v8::internal::Object)
+      4    0.1%    0.4%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      4    0.1%    0.4%  node::crypto::Hash::HashUpdate(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.1%    0.4%  node::TLSWrap::Start(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.1%    0.4%  cfree@GLIBC_2.2.5
+      3    0.1%    0.3%  v8::internal::AstValueFactory::GetString(unsigned int, bool, v8::internal::Vector<unsigned char const>)
+      3    0.1%    0.3%  v8::internal::AstValueFactory::GetOneByteStringInternal(v8::internal::Vector<unsigned char const>)
+      3    0.1%    0.3%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
+      3    0.1%    0.3%  shutdown@@GLIBC_2.2.5
+      3    0.1%    0.3%  node::fs::NewFSReqCallback(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.1%    0.3%  node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.1%    0.3%  node::AsyncWrap::EmitTraceEventBefore()
+      3    0.1%    0.3%  llhttp__internal_execute
+      3    0.1%    0.3%  __mprotect@@GLIBC_PRIVATE
+      3    0.1%    0.3%  __madvise@@GLIBC_PRIVATE
+      2    0.1%    0.2%  v8::internal::VariableMap::Lookup(v8::internal::AstRawString const*)
+      2    0.1%    0.2%  v8::internal::UnoptimizedCompilationJob::RecordCompilationStats(v8::internal::Isolate*) const
+      2    0.1%    0.2%  v8::internal::Scope::MustAllocate(v8::internal::Variable*)
+      2    0.1%    0.2%  v8::internal::FunctionLiteral::start_position() const
+      2    0.1%    0.2%  v8::internal::Expression::IsPrivateName() const
+      2    0.1%    0.2%  v8::internal::Accessors::FunctionPrototypeGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      2    0.1%    0.2%  v8::Context::GetIsolate()
+      2    0.1%    0.2%  v8::Context::Enter()
+      2    0.1%    0.2%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      2    0.1%    0.2%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+      2    0.1%    0.2%  node::fs::FSReqAfterScope::Reject(uv_fs_s*)
+      2    0.1%    0.2%  node::crypto::SecureContext::Init(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.2%  node::TCPWrap::Connect(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.2%  node::InternalCallbackScope::Close()
+      2    0.1%    0.2%  __pthread_cond_signal
+      2    0.1%    0.2%  BN_div@@OPENSSL_1_1_0
+      1    0.0%    0.1%  void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char&&)
+      1    0.0%    0.1%  v8::internal::VariableProxy::BindTo(v8::internal::Variable*)
+      1    0.0%    0.1%  v8::internal::Variable* v8::internal::Scope::Lookup<(v8::internal::Scope::ScopeLookupMode)1>(v8::internal::VariableProxy*, v8::internal::Scope*, v8::internal::Scope*, v8::internal::Scope*, bool)
+      1    0.0%    0.1%  v8::internal::SequentialStringKey<unsigned char>::IsMatch(v8::internal::String)
+      1    0.0%    0.1%  v8::internal::Scope::SetDefaults()
+      1    0.0%    0.1%  v8::internal::Scope::Scope(v8::internal::Zone*, v8::internal::ScopeType, v8::internal::Handle<v8::internal::ScopeInfo>)
+      1    0.0%    0.1%  v8::internal::Scope::NeedsScopeInfo() const
+      1    0.0%    0.1%  v8::internal::Scope::AsDeclarationScope()
+      1    0.0%    0.1%  v8::internal::Scope::AllocateVariablesRecursively()
+      1    0.0%    0.1%  v8::internal::Scope::AllocateScopeInfosRecursively(v8::internal::Isolate*, v8::internal::MaybeHandle<v8::internal::ScopeInfo>)
+      1    0.0%    0.1%  v8::internal::ObjectLiteral::BuildBoilerplateDescription(v8::internal::Isolate*)
+      1    0.0%    0.1%  v8::internal::Literal::IsPropertyName() const
+      1    0.0%    0.1%  v8::internal::FunctionLiteral::set_raw_inferred_name(v8::internal::AstConsString const*)
+      1    0.0%    0.1%  v8::internal::FunctionCallbackArguments::FunctionCallbackArguments(v8::internal::Isolate*, v8::internal::Object, v8::internal::HeapObject, v8::internal::Object, v8::internal::HeapObject, unsigned long*, int)
+      1    0.0%    0.1%  v8::internal::FunctionCallbackArguments::Call(v8::internal::CallHandlerInfo)
+      1    0.0%    0.1%  v8::internal::DeclarationScope::SetDefaults()
+      1    0.0%    0.1%  v8::internal::DeclarationScope::DeclareDynamicGlobal(v8::internal::AstRawString const*, v8::internal::VariableKind, v8::internal::Scope*)
+      1    0.0%    0.1%  v8::internal::DeclarationScope::DeclarationScope(v8::internal::Zone*, v8::internal::Scope*, v8::internal::ScopeType, v8::internal::FunctionKind)
+      1    0.0%    0.1%  v8::internal::DeclarationScope::CheckConflictingVarDeclarations()
+      1    0.0%    0.1%  v8::internal::DeclarationScope::Analyze(v8::internal::ParseInfo*)
+      1    0.0%    0.1%  v8::internal::CompareOperation::IsLiteralCompareTypeof(v8::internal::Expression**, v8::internal::Literal**)
+      1    0.0%    0.1%  v8::internal::Builtins::builtin_handle(int)
+      1    0.0%    0.1%  v8::internal::Builtins::builtin(int)
+      1    0.0%    0.1%  v8::internal::Builtin_JsonStringify(int, unsigned long*, v8::internal::Isolate*)
+      1    0.0%    0.1%  v8::internal::AstValueFactory::NewConsString(v8::internal::AstRawString const*)
+      1    0.0%    0.1%  v8::internal::AstValueFactory::GetString(v8::internal::Handle<v8::internal::String>)
+      1    0.0%    0.1%  v8::internal::AstRawString::Compare(void*, void*)
+      1    0.0%    0.1%  v8::internal::AstNode::AsMaterializedLiteral()
+      1    0.0%    0.1%  v8::internal::Accessors::FunctionLengthGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  v8::base::TemplateHashMapImpl<void*, void*, v8::base::KeyEqualityMatcher<void*>, v8::internal::ZoneAllocationPolicy>::Resize(v8::internal::ZoneAllocationPolicy)
+      1    0.0%    0.1%  v8::TryCatch::HasCaught() const
+      1    0.0%    0.1%  v8::String::NewFromOneByte(v8::Isolate*, unsigned char const*, v8::NewStringType, int)
+      1    0.0%    0.1%  v8::MicrotasksScope::PerformCheckpoint(v8::Isolate*)
+      1    0.0%    0.1%  v8::HandleScope::~HandleScope()
+      1    0.0%    0.1%  v8::HandleScope::HandleScope(v8::Isolate*)
+      1    0.0%    0.1%  v8::EscapableHandleScope::Escape(unsigned long*)
+      1    0.0%    0.1%  uv_strerror
+      1    0.0%    0.1%  uv_run
+      1    0.0%    0.1%  uv_fs_stat
+      1    0.0%    0.1%  uv_err_name
+      1    0.0%    0.1%  uv_buf_init
+      1    0.0%    0.1%  std::ostream::flush()@@GLIBCXX_3.4
+      1    0.0%    0.1%  std::locale::id::_M_id() const@@GLIBCXX_3.4
+      1    0.0%    0.1%  operator new[](unsigned long)@@GLIBCXX_3.4
+      1    0.0%    0.1%  operator new(unsigned long)@@GLIBCXX_3.4
+      1    0.0%    0.1%  operator delete(void*, unsigned long)@@CXXABI_1.3.9
+      1    0.0%    0.1%  operator delete(void*)@@GLIBCXX_3.4
+      1    0.0%    0.1%  non-virtual thunk to node::LibuvStreamWrap::GetAsyncWrap()
+      1    0.0%    0.1%  node::loader::ModuleWrap::SetSyntheticExport(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  node::fs::FSReqCallback::~FSReqCallback()
+      1    0.0%    0.1%  node::fs::FSReqBase::~FSReqBase()
+      1    0.0%    0.1%  node::fs::Access(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  node::crypto::SecureContext::SetCiphers(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  node::crypto::NodeBIO::FreeEmpty()
+      1    0.0%    0.1%  node::crypto::Hmac::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  node::TLSWrap::EncOut()
+      1    0.0%    0.1%  node::PatchProcessObject(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  node::InternalMakeCallback(node::Environment*, v8::Local<v8::Object>, v8::Local<v8::Object>, v8::Local<v8::Function>, int, v8::Local<v8::Value>*, node::async_context)
+      1    0.0%    0.1%  node::InternalCallbackScope::~InternalCallbackScope()
+      1    0.0%    0.1%  node::HandleWrap::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.1%  node::Environment::ToggleImmediateRef(bool)
+      1    0.0%    0.1%  node::AsyncWrap::~AsyncWrap()
+      1    0.0%    0.1%  llhttp__before_headers_complete
+      1    0.0%    0.1%  fstatat@@GLIBC_2.33
+      1    0.0%    0.1%  fflush@@GLIBC_2.2.5
+      1    0.0%    0.1%  calloc@@GLIBC_2.2.5
+      1    0.0%    0.1%  brk@@GLIBC_2.2.5
+      1    0.0%    0.1%  __pthread_rwlock_init
+      1    0.0%    0.1%  __mmap@@GLIBC_PRIVATE
+      1    0.0%    0.1%  __GI___pthread_mutex_lock
+      1    0.0%    0.1%  _IO_file_xsputn@@GLIBC_2.2.5
+      1    0.0%    0.1%  _IO_do_write@@GLIBC_2.2.5
+      1    0.0%    0.1%  UTF8_putc@@OPENSSL_1_1_0
+      1    0.0%    0.1%  OPENSSL_init_crypto@@OPENSSL_1_1_0
+      1    0.0%    0.1%  OPENSSL_cleanse@@OPENSSL_1_1_0
+      1    0.0%    0.1%  ERR_get_state@@OPENSSL_1_1_0
+      1    0.0%    0.1%  BUF_MEM_free@@OPENSSL_1_1_0
+
+ [Summary]:
+   ticks  total  nonlib   name
+     31    1.1%    3.4%  JavaScript
+    865   31.6%   96.0%  C++
+     94    3.4%   10.4%  GC
+   1839   67.1%          Shared libraries
+      5    0.2%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    601   72.1%   21.9%  v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*)
+     45    5.4%    1.6%  v8::internal::Builtin_JsonStringify(int, unsigned long*, v8::internal::Isolate*)
+     30    3.6%    1.1%  __write@@GLIBC_2.2.5
+     13    1.6%    0.5%  fwrite@@GLIBC_2.2.5
+     12    1.4%    0.4%  v8::internal::Builtin_ObjectDefineProperty(int, unsigned long*, v8::internal::Isolate*)
+     11    1.3%    0.4%  v8::internal::Builtin_JsonParse(int, unsigned long*, v8::internal::Isolate*)
+     11    1.3%    0.4%  syscall@@GLIBC_2.2.5
+      6    0.7%    0.2%  __libc_write
+      4    0.5%    0.1%  v8::internal::MarkingBarrier(v8::internal::HeapObject, v8::internal::FullObjectSlot, v8::internal::Object)
+      3    0.4%    0.1%  v8::internal::VariableMap::Declare(v8::internal::Zone*, v8::internal::Scope*, v8::internal::AstRawString const*, v8::internal::VariableMode, v8::internal::VariableKind, v8::internal::InitializationFlag, v8::internal::MaybeAssignedFlag, bool*)
+      3    0.4%    0.1%  v8::internal::Builtin_FunctionConstructor(int, unsigned long*, v8::internal::Isolate*)
+      3    0.4%    0.1%  v8::internal::Builtin_DateConstructor(int, unsigned long*, v8::internal::Isolate*)
+      3    0.4%    0.1%  v8::internal::Builtin_ArrayShift(int, unsigned long*, v8::internal::Isolate*)
+      3    0.4%    0.1%  v8::internal::AstValueFactory::GetString(unsigned int, bool, v8::internal::Vector<unsigned char const>)
+      3    0.4%    0.1%  v8::internal::AstValueFactory::GetOneByteStringInternal(v8::internal::Vector<unsigned char const>)
+      3    0.4%    0.1%  std::ostream::sentry::sentry(std::ostream&)@@GLIBCXX_3.4
+      3    0.4%    0.1%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)@@GLIBCXX_3.4
+      3    0.4%    0.1%  node::loader::ModuleWrap::Evaluate(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.4%    0.1%  cfree@GLIBC_2.2.5
+      3    0.4%    0.1%  __madvise@@GLIBC_PRIVATE
+      3    0.4%    0.1%  __libc_malloc@@GLIBC_2.2.5
+      2    0.2%    0.1%  v8::internal::VariableMap::Lookup(v8::internal::AstRawString const*)
+      2    0.2%    0.1%  v8::internal::UnoptimizedCompilationJob::RecordCompilationStats(v8::internal::Isolate*) const
+      2    0.2%    0.1%  v8::internal::Scope::MustAllocate(v8::internal::Variable*)
+      2    0.2%    0.1%  v8::internal::FunctionLiteral::start_position() const
+      2    0.2%    0.1%  v8::internal::Expression::IsPrivateName() const
+      2    0.2%    0.1%  v8::internal::Builtin_ReflectDefineProperty(int, unsigned long*, v8::internal::Isolate*)
+      2    0.2%    0.1%  v8::internal::Accessors::FunctionPrototypeGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      2    0.2%    0.1%  std::ostream& std::ostream::_M_insert<long>(long)@@GLIBCXX_3.4.9
+      2    0.2%    0.1%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)@@GLIBCXX_3.4.9
+      1    0.1%    0.0%  v8::internal::VariableProxy::BindTo(v8::internal::Variable*)
+      1    0.1%    0.0%  v8::internal::Variable* v8::internal::Scope::Lookup<(v8::internal::Scope::ScopeLookupMode)1>(v8::internal::VariableProxy*, v8::internal::Scope*, v8::internal::Scope*, v8::internal::Scope*, bool)
+      1    0.1%    0.0%  v8::internal::SequentialStringKey<unsigned char>::IsMatch(v8::internal::String)
+      1    0.1%    0.0%  v8::internal::Scope::SetDefaults()
+      1    0.1%    0.0%  v8::internal::Scope::Scope(v8::internal::Zone*, v8::internal::ScopeType, v8::internal::Handle<v8::internal::ScopeInfo>)
+      1    0.1%    0.0%  v8::internal::Scope::NeedsScopeInfo() const
+      1    0.1%    0.0%  v8::internal::Scope::AsDeclarationScope()
+      1    0.1%    0.0%  v8::internal::Scope::AllocateVariablesRecursively()
+      1    0.1%    0.0%  v8::internal::Scope::AllocateScopeInfosRecursively(v8::internal::Isolate*, v8::internal::MaybeHandle<v8::internal::ScopeInfo>)
+      1    0.1%    0.0%  v8::internal::ObjectLiteral::BuildBoilerplateDescription(v8::internal::Isolate*)
+      1    0.1%    0.0%  v8::internal::Literal::IsPropertyName() const
+      1    0.1%    0.0%  v8::internal::FunctionLiteral::set_raw_inferred_name(v8::internal::AstConsString const*)
+      1    0.1%    0.0%  v8::internal::DeclarationScope::SetDefaults()
+      1    0.1%    0.0%  v8::internal::DeclarationScope::DeclareDynamicGlobal(v8::internal::AstRawString const*, v8::internal::VariableKind, v8::internal::Scope*)
+      1    0.1%    0.0%  v8::internal::DeclarationScope::DeclarationScope(v8::internal::Zone*, v8::internal::Scope*, v8::internal::ScopeType, v8::internal::FunctionKind)
+      1    0.1%    0.0%  v8::internal::DeclarationScope::Analyze(v8::internal::ParseInfo*)
+      1    0.1%    0.0%  v8::internal::CompareOperation::IsLiteralCompareTypeof(v8::internal::Expression**, v8::internal::Literal**)
+      1    0.1%    0.0%  v8::internal::Builtins::builtin(int)
+      1    0.1%    0.0%  v8::internal::Builtin_ReflectGetOwnPropertyDescriptor(int, unsigned long*, v8::internal::Isolate*)
+      1    0.1%    0.0%  v8::internal::Builtin_GlobalDecodeURIComponent(int, unsigned long*, v8::internal::Isolate*)
+      1    0.1%    0.0%  v8::internal::Builtin_ErrorConstructor(int, unsigned long*, v8::internal::Isolate*)
+      1    0.1%    0.0%  v8::internal::Builtin_DateNow(int, unsigned long*, v8::internal::Isolate*)
+      1    0.1%    0.0%  v8::internal::Builtin_ArrayPop(int, unsigned long*, v8::internal::Isolate*)
+      1    0.1%    0.0%  v8::internal::Builtin_ArrayBufferConstructor(int, unsigned long*, v8::internal::Isolate*)
+      1    0.1%    0.0%  v8::internal::AstValueFactory::NewConsString(v8::internal::AstRawString const*)
+      1    0.1%    0.0%  v8::internal::AstValueFactory::GetString(v8::internal::Handle<v8::internal::String>)
+      1    0.1%    0.0%  v8::internal::AstRawString::Compare(void*, void*)
+      1    0.1%    0.0%  v8::internal::AstNode::AsMaterializedLiteral()
+      1    0.1%    0.0%  v8::internal::Accessors::FunctionLengthGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      1    0.1%    0.0%  v8::base::TemplateHashMapImpl<void*, void*, v8::base::KeyEqualityMatcher<void*>, v8::internal::ZoneAllocationPolicy>::Resize(v8::internal::ZoneAllocationPolicy)
+      1    0.1%    0.0%  v8::MicrotasksScope::PerformCheckpoint(v8::Isolate*)
+      1    0.1%    0.0%  uv_fs_stat
+      1    0.1%    0.0%  uv_buf_init
+      1    0.1%    0.0%  std::locale::id::_M_id() const@@GLIBCXX_3.4
+      1    0.1%    0.0%  operator new[](unsigned long)@@GLIBCXX_3.4
+      1    0.1%    0.0%  operator new(unsigned long)@@GLIBCXX_3.4
+      1    0.1%    0.0%  operator delete(void*, unsigned long)@@CXXABI_1.3.9
+      1    0.1%    0.0%  operator delete(void*)@@GLIBCXX_3.4
+      1    0.1%    0.0%  non-virtual thunk to node::LibuvStreamWrap::GetAsyncWrap()
+      1    0.1%    0.0%  fflush@@GLIBC_2.2.5
+      1    0.1%    0.0%  __pthread_cond_signal
+      1    0.1%    0.0%  __mmap@@GLIBC_PRIVATE
+      1    0.1%    0.0%  __lll_lock_wait
+      1    0.1%    0.0%  __libc_read
+      1    0.1%    0.0%  __GI___pthread_mutex_unlock
+      1    0.1%    0.0%  _IO_file_xsputn@@GLIBC_2.2.5
+      1    0.1%    0.0%  _IO_do_write@@GLIBC_2.2.5
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   1794   65.5%  /usr/lib/x86_64-linux-gnu/libnode.so.72
+    782   43.6%    /usr/lib/x86_64-linux-gnu/libnode.so.72
+     45    5.8%      /usr/lib/x86_64-linux-gnu/libnode.so.72
+      5   11.1%        LazyCompile: ~pipe /home/ruben/works/backend/Entrega 32/node_modules/send/index.js:510:43
+      5  100.0%          LazyCompile: ~serveStatic /home/ruben/works/backend/Entrega 32/node_modules/serve-static/index.js:72:31
+      3   60.0%            LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      2   40.0%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      4    8.9%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:231:21
+      4  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:262:26
+      3   75.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:383:17
+      1   25.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      3    6.7%        LazyCompile: ~ServerDescription /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/server_description.js:59:14
+      3  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/server.js:150:51
+      3  100.0%            LazyCompile: *emit events.js:262:44
+      3    6.7%        LazyCompile: ~ServerDescription /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/server_description.js:59:14
+      3  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/server.js:150:51
+      3  100.0%            LazyCompile: *emit events.js:262:44
+      2    4.4%        LazyCompile: ~realpathSync fs.js:1568:22
+      2  100.0%          LazyCompile: ~toRealPath internal/modules/cjs/loader.js:335:20
+      2  100.0%            LazyCompile: ~tryFile internal/modules/cjs/loader.js:326:17
+      2    4.4%        LazyCompile: ~expressInit /home/ruben/works/backend/Entrega 32/node_modules/express/lib/middleware/init.js:29:30
+      1   50.0%          LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            LazyCompile: ~trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      1   50.0%          LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      1  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      2    4.4%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      2  100.0%          LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%            LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:114:16
+      1    2.2%        LazyCompile: ~updateRsNoPrimaryFromMember /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/topology_description.js:426:37
+      1  100.0%          LazyCompile: ~update /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/topology_description.js:141:9
+      1  100.0%            LazyCompile: ~serverUpdateHandler /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/topology.js:512:22
+      1    2.2%        LazyCompile: ~translatePeerCertificate _tls_common.js:311:69
+      1  100.0%          LazyCompile: ~translatePeerCertificate _tls_common.js:311:69
+      1  100.0%            LazyCompile: ~TLSSocket.getPeerCertificate _tls_wrap.js:977:50
+      1    2.2%        LazyCompile: ~toString /home/ruben/works/backend/Entrega 32/node_modules/uid-safe/index.js:102:19
+      1  100.0%          LazyCompile: ~uidSync /home/ruben/works/backend/Entrega 32/node_modules/uid-safe/index.js:75:18
+      1  100.0%            LazyCompile: ~generateSessionId /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:514:27
+      1    2.2%        LazyCompile: ~receiveResponse /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/cmap/stream_description.js:28:18
+      1  100.0%          LazyCompile: ~set ismaster /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/cmap/connection.js:108:15
+      1  100.0%            /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1    2.2%        LazyCompile: ~populateMaps /home/ruben/works/backend/Entrega 32/node_modules/mime-types/index.js:154:23
+      1  100.0%          Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mime-types/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1    2.2%        LazyCompile: ~pathtoRegexp /home/ruben/works/backend/Entrega 32/node_modules/path-to-regexp/index.js:28:22
+      1  100.0%          LazyCompile: ~Layer /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:33:15
+      1  100.0%            LazyCompile: ~route /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:491:29
+      1    2.2%        LazyCompile: ~isIPv6 internal/net.js:34:16
+      1  100.0%          LazyCompile: ~isIP internal/net.js:38:14
+      1  100.0%            LazyCompile: ~lookupAndConnect net.js:985:26
+      1    2.2%        LazyCompile: ~isBad tls.js:165:17
+      1  100.0%          /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%            LazyCompile: ~check tls.js:147:15
+      1    2.2%        LazyCompile: ~getOwn internal/bootstrap/loaders.js:149:16
+      1  100.0%          LazyCompile: ~syncExports internal/bootstrap/loaders.js:252:14
+      1  100.0%            LazyCompile: ~<anonymous> internal/bootstrap/loaders.js:238:15
+      1    2.2%        LazyCompile: ~generateHolderClass /home/ruben/works/backend/Entrega 32/node_modules/bluebird/js/release/join.js:28:39
+      1  100.0%          LazyCompile: ~module.exports /home/ruben/works/backend/Entrega 32/node_modules/bluebird/js/release/join.js:3:9
+      1  100.0%            LazyCompile: ~module.exports /home/ruben/works/backend/Entrega 32/node_modules/bluebird/js/release/promise.js:2:26
+      1    2.2%        LazyCompile: ~enable /home/ruben/works/backend/Entrega 32/node_modules/mquery/node_modules/debug/src/debug.js:152:16
+      1  100.0%          Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mquery/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1    2.2%        LazyCompile: ~enable /home/ruben/works/backend/Entrega 32/node_modules/finalhandler/node_modules/debug/src/debug.js:138:16
+      1  100.0%          Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1    2.2%        LazyCompile: ~deriveBFS /home/ruben/works/backend/Entrega 32/node_modules/color/node_modules/color-convert/route.js:32:19
+      1  100.0%          LazyCompile: ~module.exports /home/ruben/works/backend/Entrega 32/node_modules/color/node_modules/color-convert/route.js:78:27
+      1  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/color/node_modules/color-convert/index.js:61:25
+      1    2.2%        LazyCompile: ~checkServerIdentity tls.js:211:59
+      1  100.0%          LazyCompile: ~onConnectSecure _tls_wrap.js:1488:25
+      1  100.0%            LazyCompile: *emit events.js:262:44
+      1    2.2%        LazyCompile: ~_command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%          LazyCompile: ~command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1  100.0%            LazyCompile: ~command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/cmap/connection.js:170:10
+      1    2.2%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:436:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:731:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:648:24
+      1    2.2%        LazyCompile: ~<anonymous> internal/util/inspect.js:144:44
+      1  100.0%          /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%            Eval: ~<anonymous> internal/util/inspect.js:1:1
+      1    2.2%        LazyCompile: ~<anonymous> _tls_common.js:206:37
+      1  100.0%          /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%            LazyCompile: ~createSecureContext _tls_common.js:94:59
+      1    2.2%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose-legacy-pluralize/index.js:87:34
+      1  100.0%          /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%            LazyCompile: ~pluralize /home/ruben/works/backend/Entrega 32/node_modules/mongoose-legacy-pluralize/index.js:83:19
+      1    2.2%        LazyCompile: *realpathSync fs.js:1568:22
+      1  100.0%          LazyCompile: ~toRealPath internal/modules/cjs/loader.js:335:20
+      1  100.0%            LazyCompile: ~tryFile internal/modules/cjs/loader.js:326:17
+      1    2.2%        LazyCompile: *<anonymous> internal/per_context/primordials.js:23:10
+      1  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:262:26
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1    2.2%        Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/semver/semver.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1    2.2%        Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/browserDocument.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1    2.2%        /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%          Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/operations/connect.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+     35    4.5%      LazyCompile: ~getColorDepth internal/tty.js:102:23
+     35  100.0%        LazyCompile: ~value internal/console/constructor.js:285:20
+     35  100.0%          LazyCompile: ~value internal/console/constructor.js:306:20
+     35  100.0%            LazyCompile: ~log internal/console/constructor.js:342:6
+     34    4.3%      LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+     26   76.5%        LazyCompile: ~deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:19:27
+     26  100.0%          LazyCompile: ~BSON.deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/bson.js:134:38
+     24   92.3%            LazyCompile: ~parse /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/msg.js:172:8
+      2    7.7%            LazyCompile: ~Response.parse /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/commands.js:438:36
+      8   23.5%        LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      4   50.0%          LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      4  100.0%            LazyCompile: ~deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:19:27
+      4   50.0%          LazyCompile: ~deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:19:27
+      4  100.0%            LazyCompile: ~BSON.deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/bson.js:134:38
+     29    3.7%      LazyCompile: ~session /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:179:26
+     21   72.4%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+     21  100.0%          LazyCompile: ~trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+     21  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      8   27.6%        LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      8  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      8  100.0%            LazyCompile: ~cookieParser /home/ruben/works/backend/Entrega 32/node_modules/cookie-parser/index.js:44:32
+     27    3.5%      LazyCompile: ~urlencodedParser /home/ruben/works/backend/Entrega 32/node_modules/body-parser/lib/types/urlencoded.js:79:36
+     16   59.3%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+     16  100.0%          LazyCompile: ~trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+     16  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+     11   40.7%        LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+     11  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+     11  100.0%            LazyCompile: ~error /home/ruben/works/backend/Entrega 32/node_modules/serve-static/index.js:115:39
+     23    2.9%      LazyCompile: ~store.generate /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:158:28
+     23  100.0%        LazyCompile: ~generate /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:359:22
+     23  100.0%          LazyCompile: ~session /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:179:26
+     16   69.6%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      7   30.4%            LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+     19    2.4%      LazyCompile: *getColorDepth internal/tty.js:102:23
+     15   78.9%        LazyCompile: ~value internal/console/constructor.js:285:20
+     15  100.0%          LazyCompile: ~value internal/console/constructor.js:306:20
+     15  100.0%            LazyCompile: ~log internal/console/constructor.js:342:6
+      4   21.1%        LazyCompile: *value internal/console/constructor.js:285:20
+      4  100.0%          LazyCompile: ~value internal/console/constructor.js:306:20
+      4  100.0%            LazyCompile: ~log internal/console/constructor.js:342:6
+     18    2.3%      LazyCompile: ~cookieParser /home/ruben/works/backend/Entrega 32/node_modules/cookie-parser/index.js:44:32
+     15   83.3%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+     15  100.0%          LazyCompile: ~trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+     15  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      3   16.7%        LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      3  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      3  100.0%            LazyCompile: ~expressInit /home/ruben/works/backend/Entrega 32/node_modules/express/lib/middleware/init.js:29:30
+     16    2.0%      LazyCompile: ~end _http_outgoing.js:738:45
+     16  100.0%        LazyCompile: ~end /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:250:27
+     15   93.8%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+     15  100.0%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      1    6.3%          LazyCompile: *<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      1  100.0%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+     11    1.4%      LazyCompile: ~expressInit /home/ruben/works/backend/Entrega 32/node_modules/express/lib/middleware/init.js:29:30
+     10   90.9%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+     10  100.0%          LazyCompile: ~trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+     10  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      1    9.1%        LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      1  100.0%            LazyCompile: ~query /home/ruben/works/backend/Entrega 32/node_modules/express/lib/middleware/query.js:39:24
+      9    1.2%      LazyCompile: ~writeHead _http_server.js:243:19
+      9  100.0%        LazyCompile: ~writeHead /home/ruben/works/backend/Entrega 32/node_modules/on-headers/index.js:28:29
+      9  100.0%          LazyCompile: ~_implicitHeader _http_server.js:238:68
+      9  100.0%            LazyCompile: ~write_ _http_outgoing.js:639:16
+      9    1.2%      LazyCompile: ~setHeader _http_outgoing.js:528:57
+      9  100.0%        LazyCompile: ~expressInit /home/ruben/works/backend/Entrega 32/node_modules/express/lib/middleware/init.js:29:30
+      8   88.9%          LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      8  100.0%            LazyCompile: ~trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      1   11.1%          LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      1  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:275:64
+      9    1.2%      LazyCompile: ~getOptions internal/fs/utils.js:245:20
+      9  100.0%        LazyCompile: ~readFileSync fs.js:361:22
+      9  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      5   55.6%            LazyCompile: *Module._load internal/modules/cjs/loader.js:648:24
+      4   44.4%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+      9    1.2%      LazyCompile: *nextTick internal/process/task_queues.js:105:18
+      3   33.3%        LazyCompile: ~resOnFinish _http_server.js:671:21
+      2   66.7%          LazyCompile: ~emit events.js:262:44
+      2  100.0%            LazyCompile: ~onFinish _http_outgoing.js:733:18
+      1   33.3%          LazyCompile: *emit events.js:262:44
+      1  100.0%            LazyCompile: ~onFinish _http_outgoing.js:733:18
+      2   22.2%        LazyCompile: ~resume _stream_readable.js:973:16
+      2  100.0%          LazyCompile: ~Readable.resume _stream_readable.js:959:37
+      2  100.0%            LazyCompile: ~_dump _http_incoming.js:283:49
+      2   22.2%        LazyCompile: ~emitReadable _stream_readable.js:542:22
+      2  100.0%          LazyCompile: ~onEofChunk _stream_readable.js:512:20
+      2  100.0%            LazyCompile: ~readableAddChunk _stream_readable.js:221:26
+      1   11.1%        LazyCompile: ~onwrite _stream_writable.js:431:17
+      1  100.0%          LazyCompile: *Writable.write _stream_writable.js:291:36
+      1  100.0%            LazyCompile: ~value internal/console/constructor.js:243:20
+      1   11.1%        LazyCompile: ~maybeReadMore _stream_readable.js:581:23
+      1  100.0%          LazyCompile: ~addChunk _stream_readable.js:287:18
+      1  100.0%            LazyCompile: ~readableAddChunk _stream_readable.js:221:26
+    142    7.9%    v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*)
+     54   38.0%      LazyCompile: ~memoryUsage internal/process/per_thread.js:151:23
+     54  100.0%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+     54  100.0%          LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+     54  100.0%            LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:114:16
+     21   14.8%      LazyCompile: ~sendFile /home/ruben/works/backend/Entrega 32/node_modules/send/index.js:716:51
+     21  100.0%        LazyCompile: ~pipe /home/ruben/works/backend/Entrega 32/node_modules/send/index.js:510:43
+     21  100.0%          LazyCompile: ~serveStatic /home/ruben/works/backend/Entrega 32/node_modules/serve-static/index.js:72:31
+     16   76.2%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      5   23.8%            LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+     11    7.7%      LazyCompile: ~slice buffer.js:605:12
+      8   72.7%        LazyCompile: ~toString buffer.js:773:46
+      6   75.0%          LazyCompile: ~readFileSync fs.js:361:22
+      6  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      2   25.0%          LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1   50.0%            LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1   50.0%            LazyCompile: ~deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:19:27
+      2   18.2%        LazyCompile: *deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1   50.0%          LazyCompile: ~deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:19:27
+      1  100.0%            LazyCompile: ~BSON.deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/bson.js:134:38
+      1   50.0%          LazyCompile: *deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1  100.0%            LazyCompile: *deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1    9.1%        LazyCompile: *toString buffer.js:773:46
+      1  100.0%          LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1  100.0%            LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      9    6.3%      LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      9  100.0%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      9  100.0%          LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:114:16
+      9  100.0%            LazyCompile: ~dispatch /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:98:45
+      7    4.9%      LazyCompile: ~insert internal/timers.js:345:16
+      6   85.7%        LazyCompile: ~insertGuarded internal/timers.js:320:23
+      6  100.0%          LazyCompile: ~unrefActive internal/timers.js:312:21
+      6  100.0%            LazyCompile: ~Timeout.refresh internal/timers.js:205:37
+      1   14.3%        LazyCompile: ~setUnrefTimeout internal/timers.js:367:25
+      1  100.0%          LazyCompile: ~setStreamTimeout internal/stream_base_commons.js:243:26
+      1  100.0%            LazyCompile: ~resOnFinish _http_server.js:671:21
+      5    3.5%      LazyCompile: ~openSync fs.js:453:18
+      5  100.0%        LazyCompile: ~readFileSync fs.js:361:22
+      5  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      5  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+      4    2.8%      LazyCompile: ~createWriteWrap internal/stream_base_commons.js:106:25
+      2   50.0%        LazyCompile: ~writevGeneric internal/stream_base_commons.js:118:23
+      2  100.0%          LazyCompile: ~Socket._writeGeneric net.js:762:42
+      2  100.0%            LazyCompile: ~Socket._writev net.js:794:36
+      2   50.0%        LazyCompile: ~writeGeneric internal/stream_base_commons.js:143:22
+      2  100.0%          LazyCompile: ~Socket._writeGeneric net.js:762:42
+      2  100.0%            LazyCompile: ~Socket._write net.js:799:35
+      3    2.1%      LazyCompile: ~read internal/modules/package_json_reader.js:14:14
+      2   66.7%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:231:21
+      2  100.0%          LazyCompile: ~resolveExports internal/modules/cjs/loader.js:414:24
+      2  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:436:28
+      1   33.3%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:262:26
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+      3    2.1%      LazyCompile: ~handleWriteReq internal/stream_base_commons.js:47:24
+      3  100.0%        LazyCompile: ~writeGeneric internal/stream_base_commons.js:143:22
+      3  100.0%          LazyCompile: ~Socket._writeGeneric net.js:762:42
+      3  100.0%            LazyCompile: ~Socket._write net.js:799:35
+      2    1.4%      LazyCompile: ~write buffer.js:604:12
+      2  100.0%        LazyCompile: ~write buffer.js:1039:40
+      1   50.0%          LazyCompile: ~serializeNumber /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:52:31
+      1  100.0%            LazyCompile: ~serializeInto /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:674:43
+      1   50.0%          LazyCompile: ~serializeBoolean /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:142:32
+      1  100.0%            LazyCompile: ~serializeInto /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:674:43
+      2    1.4%      LazyCompile: ~tryStatSync fs.js:324:21
+      2  100.0%        LazyCompile: ~readFileSync fs.js:361:22
+      1   50.0%          LazyCompile: ~find_package_json_with_name /home/ruben/works/backend/Entrega 32/node_modules/require_optional/index.js:27:43
+      1  100.0%            LazyCompile: ~require_optional /home/ruben/works/backend/Entrega 32/node_modules/require_optional/index.js:65:32
+      1   50.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+      2    1.4%      LazyCompile: ~stat internal/modules/cjs/loader.js:123:14
+      1   50.0%        LazyCompile: ~tryFile internal/modules/cjs/loader.js:326:17
+      1  100.0%          LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:342:23
+      1  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:436:28
+      1   50.0%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:436:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:731:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:648:24
+      2    1.4%      LazyCompile: ~slice buffer.js:667:12
+      2  100.0%        LazyCompile: *toString buffer.js:773:46
+      2  100.0%          LazyCompile: ~ObjectID.toString /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/objectid.js:191:39
+      2  100.0%            LazyCompile: ~equals /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/objectid.js:226:44
+      2    1.4%      LazyCompile: ~realpathSync fs.js:1568:22
+      2  100.0%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:335:20
+      2  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:326:17
+      2  100.0%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:342:23
+      2    1.4%      LazyCompile: ~readSync fs.js:536:18
+      2  100.0%        LazyCompile: ~tryReadSync fs.js:349:21
+      2  100.0%          LazyCompile: ~readFileSync fs.js:361:22
+      2  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      2    1.4%      LazyCompile: ~cpus os.js:103:14
+      2  100.0%        Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/server.js:1:1
+      2  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      2  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      2    1.4%      LazyCompile: ~byteLength buffer.js:719:20
+      2  100.0%        LazyCompile: ~end _http_outgoing.js:738:45
+      2  100.0%          LazyCompile: ~end /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:250:27
+      1   50.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      1   50.0%            LazyCompile: *<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+     42    2.3%    v8::internal::Builtin_JsonStringify(int, unsigned long*, v8::internal::Isolate*)
+     21   50.0%      LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+     21  100.0%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+     21  100.0%          LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:114:16
+     21  100.0%            LazyCompile: ~dispatch /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:98:45
+     19   45.2%      LazyCompile: ~hash /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:592:14
+     13   68.4%        LazyCompile: ~isModified /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:421:24
+      9   69.2%          LazyCompile: ~shouldSave /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:436:24
+      9  100.0%            LazyCompile: ~end /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:250:27
+      4   30.8%          LazyCompile: ~shouldSetCookie /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:460:29
+      4  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:220:28
+      6   31.6%        LazyCompile: ~generate /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:359:22
+      6  100.0%          LazyCompile: ~session /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:179:26
+      3   50.0%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      3   50.0%            LazyCompile: *trim_prefix /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:288:23
+      2    4.8%      LazyCompile: *<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      2  100.0%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%          LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:114:16
+      2  100.0%            LazyCompile: ~dispatch /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:98:45
+
+    224    8.2%  node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    224  100.0%    v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*)
+    224  100.0%      LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:899:18
+    224  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+    224  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+    179   79.9%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+     45   20.1%            LazyCompile: *Module._load internal/modules/cjs/loader.js:648:24
+
+    138    5.0%  epoll_pwait@@GLIBC_2.6
+
+     51    1.9%  node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     51  100.0%    v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*)
+     51  100.0%      LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+     44   86.3%        LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:297:29
+      6   13.6%          Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      3    6.8%          Eval: ~<anonymous> crypto.js:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      2    4.5%          LazyCompile: ~setupPrepareStackTrace internal/bootstrap/node.js:252:32
+      2  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      2    4.5%          Eval: ~<anonymous> tty.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      2    4.5%          Eval: ~<anonymous> tls.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      2    4.5%          Eval: ~<anonymous> internal/source_map/source_map_cache.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      2    4.5%          Eval: ~<anonymous> internal/cluster/master.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      2    4.5%          Eval: ~<anonymous> events.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      2    4.5%          Eval: ~<anonymous> _http_client.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          LazyCompile: ~setupProcessObject internal/bootstrap/node.js:271:28
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    2.3%          LazyCompile: ~setupBuffer internal/bootstrap/node.js:330:21
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    2.3%          LazyCompile: ~initializeCJSLoader internal/bootstrap/pre_execution.js:404:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution internal/bootstrap/pre_execution.js:17:36
+      1    2.3%          LazyCompile: ~get fs.js:2070:8
+      1  100.0%            /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1    2.3%          Eval: ~<anonymous> stream.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> module.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/url.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/process/task_queues.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/process/esm_loader.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/modules/esm/loader.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/modules/cjs/loader.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/modules/cjs/helpers.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/main/run_main_module.js:1:1
+      1    2.3%          Eval: ~<anonymous> internal/console/global.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> internal/child_process.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> http.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> fs.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> child_process.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> buffer.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> _tls_wrap.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1    2.3%          Eval: ~<anonymous> _stream_readable.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      7   13.7%        LazyCompile: ~compileForPublicLoader internal/bootstrap/loaders.js:213:25
+      6   85.7%          LazyCompile: ~loadNativeModule internal/modules/cjs/helpers.js:22:26
+      6  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:648:24
+      1   14.3%          LazyCompile: *Module._load internal/modules/cjs/loader.js:648:24
+      1  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:879:36
+
+     44    1.6%  __write@@GLIBC_2.2.5
+     29   65.9%    /usr/lib/x86_64-linux-gnu/libnode.so.72
+      3   10.3%      /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1   33.3%        LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:69:35
+      1   33.3%        LazyCompile: ~match /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:110:39
+      1  100.0%          LazyCompile: ~matchLayer /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:572:20
+      1  100.0%            LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/index.js:176:16
+      1   33.3%        LazyCompile: ~ServerDescription /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/server_description.js:59:14
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/server.js:150:51
+      1  100.0%            LazyCompile: ~emit events.js:262:44
+      1    3.4%      LazyCompile: ~touch /home/ruben/works/backend/Entrega 32/node_modules/express-session/session/session.js:47:56
+      1  100.0%        LazyCompile: ~end /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:250:27
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      1  100.0%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      1    3.4%      LazyCompile: ~serverUpdateHandler /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/topology.js:512:22
+      1  100.0%        LazyCompile: ~emit events.js:262:44
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/server.js:150:51
+      1  100.0%            LazyCompile: ~emit events.js:262:44
+      1    3.4%      LazyCompile: ~processTimers internal/timers.js:482:25
+      1    3.4%      LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:69:35
+      1    3.4%      LazyCompile: ~processIncomingData /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:103:29
+      1  100.0%        LazyCompile: ~_write /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:38:9
+      1  100.0%          LazyCompile: ~doWrite _stream_writable.js:393:17
+      1  100.0%            LazyCompile: ~writeOrBuffer _stream_writable.js:355:23
+      1    3.4%      LazyCompile: ~performInitialHandshake /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/connect.js:70:33
+      1  100.0%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/connect.js:30:54
+      1  100.0%          LazyCompile: ~callback /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/connect.js:275:28
+      1  100.0%            LazyCompile: ~connectHandler /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/connect.js:314:26
+      1    3.4%      LazyCompile: ~passwordDigest /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/auth/scram.js:221:24
+      1  100.0%        LazyCompile: ~continueScramConversation /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/auth/scram.js:116:35
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/auth/scram.js:106:50
+      1  100.0%            LazyCompile: ~messageHandler /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:220:33
+      1    3.4%      LazyCompile: ~onConnectSecure _tls_wrap.js:1488:25
+      1  100.0%        LazyCompile: *emit events.js:262:44
+      1  100.0%          LazyCompile: ~TLSSocket._finishInit _tls_wrap.js:911:43
+      1  100.0%            LazyCompile: ~ssl.onhandshakedone _tls_wrap.js:709:27
+      1    3.4%      LazyCompile: ~module.exports /home/ruben/works/backend/Entrega 32/node_modules/bluebird/js/release/promise.js:2:26
+      1  100.0%        Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/bluebird/js/release/bluebird.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1    3.4%      LazyCompile: ~makeFirstMessage /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/auth/scram.js:82:26
+      1  100.0%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/auth/scram.js:31:28
+      1  100.0%          LazyCompile: ~wrap.ondone internal/crypto/random.js:62:17
+      1    3.4%      LazyCompile: ~lookupAndConnect net.js:985:26
+      1  100.0%        LazyCompile: ~Socket.connect net.js:930:36
+      1  100.0%          LazyCompile: ~connect _tls_wrap.js:1561:35
+      1  100.0%            LazyCompile: ~makeConnection /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/connect.js:254:24
+      1    3.4%      LazyCompile: ~forEachCode /home/ruben/works/backend/Entrega 32/node_modules/http-errors/index.js:243:38
+      1  100.0%        /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%          LazyCompile: ~populateConstructorExports /home/ruben/works/backend/Entrega 32/node_modules/http-errors/index.js:242:37
+      1  100.0%            Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/http-errors/index.js:1:1
+      1    3.4%      LazyCompile: ~finishMaybe _stream_writable.js:633:21
+      1  100.0%        LazyCompile: ~endWritable _stream_writable.js:654:21
+      1  100.0%          LazyCompile: ~Writable.end _stream_writable.js:572:34
+      1  100.0%            LazyCompile: ~Socket.end net.js:591:32
+      1    3.4%      LazyCompile: ~emit events.js:262:44
+      1  100.0%        LazyCompile: ~parserOnIncoming _http_server.js:716:26
+      1  100.0%          LazyCompile: ~parserOnHeadersComplete _http_common.js:77:33
+      1    3.4%      LazyCompile: ~createTopology /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/operations/connect.js:486:24
+      1  100.0%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/operations/connect.js:281:25
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/uri_parser.js:120:51
+      1  100.0%            LazyCompile: ~parseConnectionString /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/uri_parser.js:560:31
+      1    3.4%      LazyCompile: ~checkServer /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/monitor.js:181:21
+      1  100.0%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/sdam/monitor.js:291:10
+      1  100.0%          LazyCompile: ~executeAndReschedule /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/utils.js:791:32
+      1  100.0%            LazyCompile: ~makeInterruptableAsyncInterval /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/utils.js:729:40
+      1    3.4%      LazyCompile: ~checkInt internal/buffer.js:54:18
+      1  100.0%        LazyCompile: ~writeU_Int32LE internal/buffer.js:686:24
+      1  100.0%          LazyCompile: ~writeInt32LE internal/buffer.js:856:22
+      1  100.0%            LazyCompile: ~toBin /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/connection/msg.js:80:8
+      1    3.4%      LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:151:30
+      1  100.0%        LazyCompile: ~writevGeneric internal/stream_base_commons.js:118:23
+      1  100.0%          LazyCompile: *Socket._writeGeneric net.js:762:42
+      1  100.0%            LazyCompile: ~Socket._writev net.js:794:36
+      1    3.4%      LazyCompile: ~_command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%        LazyCompile: ~command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1  100.0%          LazyCompile: ~command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/cmap/connection.js:170:10
+      1  100.0%            LazyCompile: ~checkServer /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/monitor.js:177:21
+      1    3.4%      LazyCompile: ~Topology /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/topology.js:103:14
+      1  100.0%        LazyCompile: ~NativeTopology /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/topologies/native_topology.js:9:14
+      1  100.0%          LazyCompile: ~createTopology /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/operations/connect.js:487:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/operations/connect.js:282:25
+      1    3.4%      LazyCompile: ~Pager.set /home/ruben/works/backend/Entrega 32/node_modules/memory-pager/index.js:81:32
+      1  100.0%        LazyCompile: ~Bitfield /home/ruben/works/backend/Entrega 32/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%          LazyCompile: ~Bitfield /home/ruben/works/backend/Entrega 32/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%            LazyCompile: ~read /home/ruben/works/backend/Entrega 32/node_modules/saslprep/lib/memory-code-points.js:15:14
+      1    3.4%      LazyCompile: ~Long.fromInt /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/long.js:683:24
+      1  100.0%        Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/long.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1    3.4%      LazyCompile: ~Connection.onOpen /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/connection.js:630:39
+      1  100.0%        LazyCompile: ~_setClient /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/connection.js:881:20
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/connection.js:835:20
+      1  100.0%            LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/utils.js:685:14
+      1    3.4%      LazyCompile: ~Connection /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:29:14
+      1  100.0%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/connection/connect.js:30:54
+      1  100.0%          LazyCompile: ~callback /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/connection/connect.js:275:28
+      1  100.0%            LazyCompile: ~connectHandler /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/connection/connect.js:314:26
+      1    3.4%      LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/uri_parser.js:120:51
+      1  100.0%        LazyCompile: ~parseConnectionString /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/uri_parser.js:560:31
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/uri_parser.js:93:35
+      1  100.0%            LazyCompile: ~onresolve dns.js:198:19
+      1    3.4%      Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/api/mensajes.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+      1    2.3%    LazyCompile: ~ondata _stream_readable.js:716:18
+      1  100.0%      LazyCompile: *emit events.js:262:44
+      1  100.0%        LazyCompile: ~Readable.read _stream_readable.js:378:35
+      1  100.0%          LazyCompile: ~flow _stream_readable.js:1004:14
+      1  100.0%            LazyCompile: ~resume_ _stream_readable.js:980:17
+
+     38    1.4%  void node::StreamBase::JSMethod<&node::StreamBase::Writev>(v8::FunctionCallbackInfo<v8::Value> const&)
+     38  100.0%    v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*)
+     38  100.0%      LazyCompile: ~writevGeneric internal/stream_base_commons.js:118:23
+     27   71.1%        LazyCompile: ~Socket._writeGeneric net.js:762:42
+     27  100.0%          LazyCompile: ~Socket._writev net.js:794:36
+     27  100.0%            LazyCompile: ~doWrite _stream_writable.js:393:17
+     11   28.9%        LazyCompile: *Socket._writeGeneric net.js:762:42
+     11  100.0%          LazyCompile: ~Socket._writev net.js:794:36
+     11  100.0%            LazyCompile: ~doWrite _stream_writable.js:393:17
+
+     38    1.4%  void node::StreamBase::JSMethod<&(int node::StreamBase::WriteString<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&))>(v8::FunctionCallbackInfo<v8::Value> const&)
+     38  100.0%    v8::internal::Builtin_HandleApiCall(int, unsigned long*, v8::internal::Isolate*)
+     38  100.0%      LazyCompile: ~handleWriteReq internal/stream_base_commons.js:47:24
+     38  100.0%        LazyCompile: ~writeGeneric internal/stream_base_commons.js:143:22
+     38  100.0%          LazyCompile: ~Socket._writeGeneric net.js:762:42
+     38  100.0%            LazyCompile: ~Socket._write net.js:799:35
+
+     32    1.2%  /usr/lib/x86_64-linux-gnu/libc-2.33.so
+     21   65.6%    /usr/lib/x86_64-linux-gnu/libnode.so.72
+      2    9.5%      /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1   50.0%        LazyCompile: ~parseConnectionString /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/uri_parser.js:560:31
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/uri_parser.js:93:35
+      1  100.0%            LazyCompile: ~onresolve dns.js:198:19
+      1   50.0%        Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/uri_parser.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1    4.8%      LazyCompile: ~writeCommand /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/cmap/message_stream.js:51:15
+      1  100.0%        LazyCompile: ~write /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/cmap/connection.js:297:15
+      1  100.0%          LazyCompile: ~_command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/wireprotocol/command.js:41:18
+      1  100.0%            LazyCompile: ~command /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/wireprotocol/command.js:19:17
+      1    4.8%      LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:899:18
+      1  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+      1    4.8%      LazyCompile: ~toRealPath internal/modules/cjs/loader.js:335:20
+      1  100.0%        LazyCompile: ~tryFile internal/modules/cjs/loader.js:326:17
+      1  100.0%          LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:342:23
+      1  100.0%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:279:20
+      1    4.8%      LazyCompile: ~store.generate /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:158:28
+      1  100.0%        LazyCompile: ~generate /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:359:22
+      1  100.0%          LazyCompile: ~session /home/ruben/works/backend/Entrega 32/node_modules/express-session/index.js:179:26
+      1  100.0%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      1    4.8%      LazyCompile: ~serverUpdateHandler /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/topology.js:512:22
+      1  100.0%        LazyCompile: ~emit events.js:262:44
+      1  100.0%          LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongodb/lib/core/sdam/server.js:150:51
+      1  100.0%            LazyCompile: ~emit events.js:262:44
+      1    4.8%      LazyCompile: ~serializeInto /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:674:43
+      1  100.0%        LazyCompile: ~serializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:320:31
+      1  100.0%          LazyCompile: ~serializeInto /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:674:43
+      1  100.0%            LazyCompile: ~serializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/serializer.js:320:31
+      1    4.8%      LazyCompile: ~onwrite /home/ruben/works/backend/Entrega 32/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:444:17
+      1  100.0%        LazyCompile: ~WritableState.onwrite /home/ruben/works/backend/Entrega 32/node_modules/winston/node_modules/readable-stream/lib/_stream_writable.js:159:27
+      1  100.0%          LazyCompile: ~afterTransform /home/ruben/works/backend/Entrega 32/node_modules/winston/node_modules/readable-stream/lib/_stream_transform.js:76:24
+      1  100.0%            LazyCompile: ~_transform /home/ruben/works/backend/Entrega 32/node_modules/winston/lib/winston/logger.js:267:13
+      1    4.8%      LazyCompile: ~fromStringFast buffer.js:422:24
+      1  100.0%        LazyCompile: ~fromString buffer.js:441:20
+      1  100.0%          LazyCompile: ~from buffer.js:303:28
+      1  100.0%            LazyCompile: ~continueScramConversation /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/auth/scram.js:116:35
+      1    4.8%      LazyCompile: ~defaultTriggerAsyncIdScope internal/async_hooks.js:355:36
+      1  100.0%        LazyCompile: ~connectionListener _http_server.js:395:28
+      1  100.0%          LazyCompile: ~emit events.js:262:44
+      1  100.0%            LazyCompile: ~onconnection net.js:1523:22
+      1    4.8%      LazyCompile: ~allocBuffer /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/utils.js:15:21
+      1  100.0%        LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1  100.0%          LazyCompile: ~deserializeObject /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:43:33
+      1  100.0%            LazyCompile: ~deserialize /home/ruben/works/backend/Entrega 32/node_modules/bson/lib/bson/parser/deserializer.js:19:27
+      1    4.8%      LazyCompile: ~_optionalRequire /home/ruben/works/backend/Entrega 32/node_modules/optional-require/index.js:23:26
+      1  100.0%        LazyCompile: ~tryRequire /home/ruben/works/backend/Entrega 32/node_modules/optional-require/index.js:62:20
+      1  100.0%          LazyCompile: ~x /home/ruben/works/backend/Entrega 32/node_modules/optional-require/index.js:66:13
+      1  100.0%            LazyCompile: ~retrieveEJSON /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/core/utils.js:48:23
+      1    4.8%      LazyCompile: ~SchemaType /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/schematype.js:40:20
+      1  100.0%        LazyCompile: ~ObjectId /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/schema/objectid.js:25:18
+      1  100.0%          LazyCompile: ~Schema.interpretAsType /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/schema.js:878:44
+      1  100.0%            LazyCompile: ~Schema.path /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/schema.js:618:33
+      1    4.8%      LazyCompile: ~MongoClient /home/ruben/works/backend/Entrega 32/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:189:21
+      1  100.0%        LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/connection.js:832:31
+      1  100.0%          /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%            LazyCompile: ~Connection.openUri /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/connection.js:680:40
+      1    4.8%      LazyCompile: ~Module._load internal/modules/cjs/loader.js:648:24
+      1  100.0%        LazyCompile: ~Module.require internal/modules/cjs/loader.js:879:36
+      1  100.0%          LazyCompile: ~require internal/modules/cjs/helpers.js:73:31
+      1  100.0%            Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mongoose/lib/schema.js:1:1
+      1    4.8%      LazyCompile: ~<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      1  100.0%        LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:114:16
+      1  100.0%            LazyCompile: ~dispatch /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:98:45
+      1    4.8%      LazyCompile: *value internal/console/constructor.js:243:20
+      1  100.0%        LazyCompile: ~log internal/console/constructor.js:342:6
+      1  100.0%          /usr/lib/x86_64-linux-gnu/libnode.so.72
+      1  100.0%            LazyCompile: *<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      1    4.8%      LazyCompile: *stat internal/modules/cjs/loader.js:123:14
+      1  100.0%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:436:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:731:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:648:24
+      1    4.8%      LazyCompile: *resolve path.js:973:10
+      1  100.0%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:231:21
+      1  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:262:26
+      1  100.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:383:17
+      1    4.8%      Eval: ~<anonymous> /home/ruben/works/backend/Entrega 32/node_modules/mquery/lib/permissions.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:953:37
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1008:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:851:33
+      1    3.1%    LazyCompile: *<anonymous> /home/ruben/works/backend/Entrega 32/worker.js:134:18
+      1  100.0%      LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%        LazyCompile: ~next /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:114:16
+      1  100.0%          LazyCompile: ~dispatch /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/route.js:98:45
+      1  100.0%            LazyCompile: ~handle /home/ruben/works/backend/Entrega 32/node_modules/express/lib/router/layer.js:86:49
+
