@@ -8,8 +8,8 @@ const { fork } = require('child_process')
 /* -------------- PASSPORT FACEBOOK----------------- */
 const passport=require('passport');
 const FacebookStrategy =require('passport-facebook')
-const FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID || '214193726820220';
-const FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET || '2fd7add7ccdba3ee53c155fd0aa03883';
+const FACEBOOK_CLIENT_ID = process.env.FACEBOOK_CLIENT_ID || '214193******';
+const FACEBOOK_CLIENT_SECRET = process.env.FACEBOOK_CLIENT_SECRET || '2fd7add7ccdba3ee53********';
 passport.use(new FacebookStrategy({
   clientID: FACEBOOK_CLIENT_ID ,
   clientSecret: FACEBOOK_CLIENT_SECRET,
